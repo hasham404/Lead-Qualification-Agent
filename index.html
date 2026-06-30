@@ -148,17 +148,19 @@
       color: var(--accent);
       margin-bottom: 20px;
       text-align: center;
+      position: relative;
+      z-index: 2;
     }
     .chat-container {
       width: 100%;
       max-width: 460px;
-      height: 520px;
+      height: 560px;
       background: #141414;
       border-radius: 16px;
       border: 1px solid #222;
       overflow: hidden;
       position: relative;
-      z-index: 1;
+      z-index: 2;
       box-shadow: 0 40px 80px rgba(0,0,0,0.6);
     }
     .chat-topbar {
@@ -174,18 +176,12 @@
     .dot-yellow { background: #FEBC2E; }
     .dot-green { background: #28C840; }
     .chat-topbar-title { font-size: 0.78rem; color: #888; margin-left: 8px; letter-spacing: 0.04em; }
-    .chat-body {
+    .chat-iframe {
       width: 100%;
       height: calc(100% - 45px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      color: #555;
-      gap: 12px;
+      border: none;
+      display: block;
     }
-    .chat-body-icon { font-size: 2rem; }
-    .chat-body p { font-size: 0.82rem; letter-spacing: 0.04em; }
     .chat-note {
       margin-top: 16px;
       font-size: 0.72rem;
@@ -193,7 +189,7 @@
       text-align: center;
       letter-spacing: 0.04em;
       position: relative;
-      z-index: 1;
+      z-index: 2;
     }
     .section { padding: 100px 48px; }
     .section-eyebrow {
@@ -304,7 +300,7 @@
       .nav-links { display: none; }
       .hero { grid-template-columns: 1fr; min-height: auto; }
       .hero-left { padding: 100px 24px 60px; border-right: none; border-bottom: 1px solid var(--grey-light); }
-      .hero-right { padding: 60px 24px; min-height: 600px; }
+      .hero-right { padding: 60px 24px; min-height: 680px; }
       .steps-grid { grid-template-columns: 1fr 1fr; }
       .step { border-bottom: 1px solid var(--grey-light); }
       .leads-grid { grid-template-columns: 1fr; }
@@ -354,10 +350,11 @@
           <div class="chat-dot dot-green"></div>
           <span class="chat-topbar-title">Elite Realty — AI Assistant</span>
         </div>
-        <div class="chat-body">
-          <span class="chat-body-icon">🏠</span>
-          <p>Click the chat bubble to get started →</p>
-        </div>
+        <iframe
+          class="chat-iframe"
+          src="https://app.relevanceai.com/agents/share/d7b62b/df5e08cf-f0d8-4fde-b555-841a04682130/610f4601-09ea-4f05-80d9-abc47ca89a8c"
+          allow="microphone"
+        ></iframe>
       </div>
       <p class="chat-note">Real AI · Real CRM · Real follow-ups</p>
     </div>
@@ -427,12 +424,6 @@
     <div class="footer-note">AI Lead Qualification System — Live Demo</div>
     <div class="footer-powered">Powered by Relevance AI · Supabase · Make.com</div>
   </footer>
-
-  <script defer
-    data-relevanceai-share-id="d7b62b/df5e08cf-f0d8-4fde-b555-841a04682130/610f4601-09ea-4f05-80d9-abc47ca89a8c"
-    src="https://app.relevanceai.com/embed/chat-bubble.js"
-    data-share-styles="hide_tool_steps=false&hide_file_uploads=false&hide_conversation_list=false&bubble_style=agent&primary_color=%23685FFF&bubble_icon=pd%2Fchat&input_placeholder_text=Type+your+message...&hide_logo=false&hide_description=false">
-  </script>
 
 </body>
 </html>
